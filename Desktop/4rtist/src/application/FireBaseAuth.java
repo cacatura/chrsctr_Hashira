@@ -18,7 +18,7 @@ public class FireBaseAuth {
         String token = null;
 
         try {
-            URL url = new URL("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDADusAFsb0081OjSQp1B8rTA6VgGiSXCc");
+            URL url = new URL("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API key]");
             urlRequest = (HttpURLConnection) url.openConnection();
             urlRequest.setRequestMethod("POST");
             urlRequest.setDoOutput(true);
@@ -31,9 +31,6 @@ public class FireBaseAuth {
 
             urlRequest.connect();
             
-            //JsonParser jp = new JsonParser(); //from gson
-            //JsonElement root = jp.parse(new InputStreamReader((InputStream) urlRequest.getContent())); //Convert the input stream to a json element
-            //JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object. 
             JsonObject rootobj = JsonParser.parseReader(new InputStreamReader((InputStream) urlRequest.getContent())).getAsJsonObject();
             token = rootobj.get("registered").getAsString();
             
