@@ -1,42 +1,41 @@
-import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
-import { Link, useHistory } from "react-router-dom"
+import React, { useRef, useState } from "react";
+import { Form, Button, Card, Alert } from "react-bootstrap";
+import { useAuth } from "../contexts/AuthContext";
+import { Link, useHistory } from "react-router-dom";
 import "./style.css";
-import logo from './artisy.png'; 
-
+import logo from "../imgs/artisy.png";
 
 export default function Login() {
-  const emailRef = useRef()
-  const passwordRef = useRef()
-  const { login } = useAuth()
-  const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
-  const history = useHistory()
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   async function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
-      setError("")
-      setLoading(true)
-      await login(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.push("/");
     } catch {
-      setError("Failed to log in")
+      setError("Failed to log in");
     }
 
-    setLoading(false)
+    setLoading(false);
   }
-  const styles= {
+  const styles = {
     main: {
-      backgroundColor: "#040814", 
-    }
-  }
-    
+      backgroundColor: "white",
+    },
+  };
+
   return (
-    <div style = {styles.main}>
-      <img className = "logo" src={logo}  alt="Logo" />
+    <div style={styles.main}>
+      <img className="logo" src={logo} alt="Logo" />
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
@@ -63,5 +62,5 @@ export default function Login() {
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
     </div>
-  )
+  );
 }

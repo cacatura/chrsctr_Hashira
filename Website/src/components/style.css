@@ -6,3 +6,25 @@
     margin-right: auto;
     margin-bottom: 20px;
 }
+.navbarPos {
+    margin-top: 0px;
+}
+.pfp{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-width: 5px;
+}
+.imageDisplay {
+    width: 300px;
+    margin: 10px;
+}
+.uploadForm{
+    margin: 0px;
+    align-items: left;
+}
+.uploadContainer{
+    margin: 0px;
+    align-items: left;
+    border-color: black;
+}
