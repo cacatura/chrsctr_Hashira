@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	public void start(Stage primaryStage)  {
 		try {
-			primaryStage.setTitle("4rtist Login");
+			primaryStage.setTitle("4rtist");
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Login.fxml"));
 			Scene scene = new Scene(root, 400, 300);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
