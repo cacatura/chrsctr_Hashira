@@ -1,36 +1,13 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { withSafeAreaInsets } from "react-native-safe-area-context";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginScreen from "./screens/LoginScreen";
-import HomeScreen from "./screens/HomeScreen";
-
-const Stack = createNativeStackNavigator();
+import * as React from "react";
+import { DrawerActions, NavigationContainer } from "@react-navigation/native";
+import AuthNavigator from "./src/navigation/AuthNavigator";
+import "react-native-gesture-handler";
+import LoginScreen from "./src/screens/auth/LoginScreen";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Login"
-          component={LoginScreen}
-        />
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "pink",
-  },
-});
