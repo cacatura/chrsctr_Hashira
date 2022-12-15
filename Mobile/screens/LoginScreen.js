@@ -20,7 +20,7 @@ const LoginScreen = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        navigation.replace("Home");
+        navigation.replace("Dashboard");
       }
     });
     return unsubscribe;
@@ -48,6 +48,9 @@ const LoginScreen = () => {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <View>
+        <Image style={styles.logo} source={require("../imgs/artisy.png")} />
+      </View>
       <View style={styles.mainContainer}>
         <View style={styles.inputContainer}>
           <TextInput
@@ -140,6 +143,10 @@ const styles = StyleSheet.create({
   buttonOutlineText: {},
   signUp: {
     color: "#0782F9",
+  },
+  logo: {
+    width: 250,
+    height: 250,
   },
 });
 
