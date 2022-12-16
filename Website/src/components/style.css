@@ -22,12 +22,11 @@
     width: 300px;
     margin: 10px;
 }
-.uploadForm{
-    margin: 0px;
-    align-items: left;
-}
 .uploadContainer{
     margin: 0px;
-    align-items: left;
-    border-color: black;
+}
+.photobox{
+}
+.main-content-box {
+    margin-top: 100px;
 }
