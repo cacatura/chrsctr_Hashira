@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="username" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane fx:id="username" prefHeight="244.0" prefWidth="266.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <Button fx:id="logout" layoutX="332.0" layoutY="261.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
-      <Button fx:id="imgUpload" layoutX="16.0" layoutY="44.0" mnemonicParsing="false" onAction="#imgUpload" prefHeight="25.0" prefWidth="76.0" text="Upload" />
-      <Label fx:id="userName" layoutX="16.0" layoutY="14.0" text="Username" />
+      <Button fx:id="logout" layoutX="107.0" layoutY="179.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <Button fx:id="imgUpload" layoutX="50.0" layoutY="49.0" mnemonicParsing="false" onAction="#imgUpload" prefHeight="96.0" prefWidth="167.0" text="Upload" />
    </children>
 </AnchorPane>

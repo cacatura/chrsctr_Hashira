@@ -27,9 +27,6 @@ public class MainController {
 	private Label lblStatus;
 	
 	@FXML
-	private Label userName;
-	
-	@FXML
 	private TextField txtusername;
 
 	@FXML
@@ -56,17 +53,17 @@ public class MainController {
 	@FXML
 	private Button cancel;
 	
+	@FXML
+	private Button confirmUpload;	
+	
+	public String imgPath;
+	
 	public void Login(ActionEvent event) throws Exception {
-		//User user = new User(txtusername.getText(), txtpassword.getText());
 		FireBaseAuth auth = new FireBaseAuth();
-		//System.out.println(user.getUserName());
-		//System.out.println(user.getPassWord());
-		//System.out.println(auth.auth(txtusername.getText(), txtpassword.getText()));
 		if (auth.auth(txtusername.getText(), txtpassword.getText()).equals("true")) {
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Profile.fxml"));
 			Stage window = (Stage) btnlogin.getScene().getWindow();
-			window.setScene(new Scene(root, 400, 300));
-			
+			window.setScene(new Scene(root));
 		} else {
 			lblStatus.setText("Login Error");
 		}
@@ -112,6 +109,7 @@ public class MainController {
 		if (result == JFileChooser.APPROVE_OPTION) {
 			File selectedFile = file.getSelectedFile();
 			String path = selectedFile.getAbsolutePath();
+			imgPath = path; 
 			System.out.println(path);
 			BufferedImage buffImg = ImageIO.read(new File(path));
 			Image img  = SwingFXUtils.toFXImage(buffImg, null);
@@ -130,5 +128,9 @@ public class MainController {
 		}
 	}
 	
+	public void confirmUpload (ActionEvent event) {
+		ImgUpload upload = new ImgUpload();
+		upload.Upload(imgPath);
+	}
 	
 }
