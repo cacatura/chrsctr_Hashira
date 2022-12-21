@@ -1,4 +1,4 @@
-Good day! We are Hashira|4rtist
+Good day! We are Hashira | 4rtist
 
 Members:
 CATURA, Christian Aris C.
